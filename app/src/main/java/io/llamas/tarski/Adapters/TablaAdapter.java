@@ -59,19 +59,19 @@ public class TablaAdapter extends RecyclerView.Adapter<TablaAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, final int position) {
         final Celda c = celdas.get(position);
 
-        if (c.getColor() != Utils.StateColores.NONE) {
+        if (c.getColor() != Utils.StateCelda.NONE) {
 
-            if (c.getForma() == Utils.StateFormas.CUADRADO) {
+            if (c.getForma() == Utils.StateCelda.CUADRADO) {
 
                 holder.forma.setImageResource(STATECUADRADOS[c.getColor()]);
 
-            } else if (c.getForma() == Utils.StateFormas.CIRCULO) {
+            } else if (c.getForma() == Utils.StateCelda.HEXAGONO) {
 
-                holder.forma.setImageResource(STATECIRCULOS[c.getColor()]);
+                holder.forma.setImageResource(STATEHEXAGONO[c.getColor()]);
 
             } else {
 
-                holder.forma.setImageResource(STATEHEXAGONO[c.getColor()]);
+                holder.forma.setImageResource(STATECIRCULOS[c.getColor()]);
 
             }
 

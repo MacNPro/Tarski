@@ -3,9 +3,7 @@ package io.llamas.tarski.Model;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import io.llamas.tarski.Utils.StateFormas;
-import io.llamas.tarski.Utils.StateColores;
-import io.llamas.tarski.Utils.StateBocales;
+import io.llamas.tarski.Utils.StateCelda;
 
 /**
  * Created by MacNPro on 10/28/17.
@@ -20,35 +18,35 @@ public class Tabla {
         Celda[] cs1 = {
                 new Celda(0, 0, 0),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CUADRADO, StateColores.ROJO, StateBocales.A),
+                new Celda(StateCelda.CUADRADO, StateCelda.ROJO, StateCelda.A),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.HEXAGONO, StateColores.ROJO, StateBocales.E),
+                new Celda(StateCelda.HEXAGONO, StateCelda.ROJO, StateCelda.E),
                 new Celda(0, 0, 0)
         };
 
         Celda[] cs2 = {
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CIRCULO, StateColores.AZUL, StateBocales.E),
+                new Celda(StateCelda.CIRCULO, StateCelda.AZUL, StateCelda.E),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CUADRADO, StateColores.NARANJA, StateBocales.E),
+                new Celda(StateCelda.CUADRADO, StateCelda.NARANJA, StateCelda.E),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CIRCULO, StateColores.VERDE, StateBocales.A)
+                new Celda(StateCelda.CIRCULO, StateCelda.VERDE, StateCelda.A)
         };
 
         Celda[] cs3 = {
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CUADRADO, StateColores.NARANJA, StateBocales.O),
+                new Celda(StateCelda.CUADRADO, StateCelda.NARANJA, StateCelda.O),
                 new Celda(0, 0, 0),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.HEXAGONO, StateColores.NARANJA, StateBocales.O),
+                new Celda(StateCelda.HEXAGONO, StateCelda.NARANJA, StateCelda.O),
                 new Celda(0, 0, 0)
         };
 
         Celda[] cs4 = {
-                new Celda(StateFormas.HEXAGONO, StateColores.ROJO, StateBocales.A),
+                new Celda(StateCelda.HEXAGONO, StateCelda.ROJO, StateCelda.A),
                 new Celda(0, 0, 0),
                 new Celda(0, 0, 0),
-                new Celda(StateFormas.CIRCULO, StateColores.AZUL, StateBocales.I),
+                new Celda(StateCelda.CIRCULO, StateCelda.AZUL, StateCelda.I),
                 new Celda(0, 0, 0),
                 new Celda(0, 0, 0)
         };

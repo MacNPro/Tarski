@@ -9,37 +9,44 @@ import android.support.v4.content.ContextCompat;
 
 public class Utils {
 
-    public static class StateFormas {
+    public static class StateCelda {
 
         public static final int NONE = 0;
         public static final int CUADRADO = 1;
         public static final int HEXAGONO = 2;
         public static final int CIRCULO = 3;
+        public static final int ROJO = 4;
+        public static final int VERDE = 5;
+        public static final int NARANJA = 6;
+        public static final int AZUL = 7;
+        public static final int A = 8;
+        public static final int E = 9;
+        public static final int I = 10;
+        public static final int O = 11;
+        public static final int U = 12;
 
     }
 
-    public static class StateColores {
-
-        public static final int NONE = 0;
-        public static final int ROJO = 1;
-        public static final int VERDE = 2;
-        public static final int NARANJA = 3;
-        public static final int AZUL = 4;
-
-    }
-
-    public static class StateBocales {
-
-        public static final int NONE = 0;
-        public static final int A = 1;
-        public static final int E = 2;
-        public static final int I = 3;
-        public static final int O = 4;
-        public static final int U = 5;
-
-    }
+    public static String[] STATECELDA = {
+            "NONE",
+            "cuadrado",
+            "hexagono",
+            "circulo",
+            "rojo",
+            "verde",
+            "naranja",
+            "azul",
+            "a",
+            "e",
+            "i",
+            "o",
+            "u"
+    };
 
     public static int[] STATECUADRADOS = {
+            0,
+            0,
+            0,
             0,
             R.drawable.cuadrado_rojo,
             R.drawable.cuadrado_verde,
@@ -49,6 +56,9 @@ public class Utils {
 
     public static int[] STATECIRCULOS = {
             0,
+            0,
+            0,
+            0,
             R.drawable.circulo_rojo,
             R.drawable.circulo_verde,
             R.drawable.circulo_naranja,
@@ -57,27 +67,23 @@ public class Utils {
 
     public static int[] STATEHEXAGONO = {
             0,
+            0,
+            0,
+            0,
             R.drawable.medalla_rojo,
             R.drawable.medalla_verde,
             R.drawable.medalla_naranja,
             R.drawable.medalla_azul,
     };
 
-    public static String[] TODAS = {
-            "cuadrado",
-            "circulo",
-            "hexagono",
-            "rojo",
-            "verde",
-            "naranja",
-            "a",
-            "e",
-            "i",
-            "o",
-            "u"
-    };
-
     public static String[] BOCALES = {
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "A",
             "E",
