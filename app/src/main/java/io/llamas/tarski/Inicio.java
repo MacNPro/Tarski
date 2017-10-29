@@ -45,8 +45,7 @@ public class Inicio extends FragmentActivity {
         Glide.with(this).load("https://image.ibb.co/gxeLo6/Screen_Shot_2017_10_28_at_3_31_13_PM.png").dontAnimate().into((ImageView) findViewById(R.id.portada));
         espacio.getLayoutParams().height = getScreenHeight();
 
-
-        procesarTexto("<titulo>El mundo de Tarski\n" +
+        procesarTexto("<titulo>El Mundo de Tarski\n" +
                 "#_\n" +
                 "<texto>El mundo de Tarski es una aproximación educativa basada en ordenador al estudio de la lógica de primer orden. En esta aplicación aprenderás los conceptos básicos de la lógica de primer orden. Además, podrás crear tus sentencias y la aplicación regresará el valor de verdad de dicha sentencia. Al final, se encuentra un quiz para evaluar tus conocimientos.\n" +
                 "#_\n" +
@@ -90,9 +89,9 @@ public class Inicio extends FragmentActivity {
                 "#_\n" +
                 "<img>https://image.ibb.co/dtu9y6/22906536_602202680125256_1436334019_o.jpg\n" +
                 "#_\n" +
-                "<texto_centrado>Ejemplo\n" +
+                "<texto_centrado>Ejemplos\n" +
                 "#_\n" +
-                "<texto>Toda x es círculo y roja y A\n" +
+                "<texto_centrado>Toda x es círculo y roja y A\n" +
                 "Toda x es hexágono o verde o U\n" +
                 "Alguna x es verde o O\n" +
                 "Alguna x es cuadrado\n");
@@ -124,10 +123,10 @@ public class Inicio extends FragmentActivity {
     private void procesarTexto(String texto) {
 
         int index = 0;
-        int total = texto.split("#_\n").length;
+        int total = texto.split("\n#_\n").length;
         LinearLayout container = (LinearLayout) findViewById(R.id.contenido);
 
-        for (String elemento : texto.split("#_\n")) {
+        for (String elemento : texto.split("\n#_\n")) {
             if (elemento.contains("<titulo>")) {
 
                 elemento = elemento.replace("<titulo>", "");
@@ -135,7 +134,7 @@ public class Inicio extends FragmentActivity {
                 TextView titulo = new RalewaySemiBold(this, attributeSet("titulo"));
                 titulo.setText(elemento);
                 titulo.setTextColor(getResourceColor(this, R.color.texto_basico));
-                titulo.setLayoutParams(getParams(index, total));
+                titulo.setLayoutParams(getParams());
 
                 container.addView(titulo);
 
@@ -146,7 +145,7 @@ public class Inicio extends FragmentActivity {
                 TextView titulo = new RalewaySemiBold(this, attributeSet("texto"));
                 titulo.setText(elemento);
                 titulo.setTextColor(getResourceColor(this, R.color.texto_basico));
-                titulo.setLayoutParams(getParams(index, total));
+                titulo.setLayoutParams(getParams());
 
                 container.addView(titulo);
 
@@ -157,7 +156,7 @@ public class Inicio extends FragmentActivity {
                 TextView titulo = new RalewaySemiBold(this, attributeSet("texto_centrado"));
                 titulo.setText(elemento);
                 titulo.setTextColor(getResourceColor(this, R.color.texto_basico));
-                titulo.setLayoutParams(getParams(index, total));
+                titulo.setLayoutParams(getParams());
 
                 container.addView(titulo);
 
@@ -166,9 +165,7 @@ public class Inicio extends FragmentActivity {
                 elemento = elemento.replace("<img>", "");
 
                 ImageView img = new ImageView(this);
-                LinearLayout.LayoutParams p = getParams(index, total);
-                p.setMargins(0, Math.round(32 * getDimensiones()), 0, 0);
-                img.setLayoutParams(p);
+                img.setLayoutParams(getParams());
                 img.setScaleType(ImageView.ScaleType.CENTER_CROP);
                 img.setAdjustViewBounds(true);
                 Glide.with(this)
@@ -183,7 +180,7 @@ public class Inicio extends FragmentActivity {
 
                 TextView textoDefault = new RalewayRegular(this, attributeSet("texto"));
                 textoDefault.setText(String.format("Error: %s", elemento));
-                textoDefault.setLayoutParams(getParams(index, total));
+                textoDefault.setLayoutParams(getParams());
 
                 container.addView(textoDefault);
 
@@ -213,19 +210,13 @@ public class Inicio extends FragmentActivity {
         Log.d(this.getClass().getSimpleName(), text);
     }
 
-    private LinearLayout.LayoutParams getParams(int index, int total) {
+    private LinearLayout.LayoutParams getParams() {
 
         int hori = Math.round(16 * getDimensiones());
         int vert = Math.round(32 * getDimensiones());
 
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         params.setMargins(hori, vert, hori, 0);
-
-        /*if (index + 1 == total) {
-            params.setMargins(hori, vert, hori, vert);
-        } else {
-            params.setMargins(hori, vert, hori, 0);
-        }*/
 
         return params;
     }
@@ -241,7 +232,7 @@ public class Inicio extends FragmentActivity {
                 break;
 
             case "texto_centrado":
-                parser = getResources().getXml(R.xml.subtitulo_style);
+                parser = getResources().getXml(R.xml.texto_centrado_style);
                 break;
 
             case "texto":
