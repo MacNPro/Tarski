@@ -63,6 +63,20 @@ public class Utils {
             R.drawable.medalla_azul,
     };
 
+    public static String[] TODAS = {
+            "cuadrado",
+            "circulo",
+            "hexagono",
+            "rojo",
+            "verde",
+            "naranja",
+            "a",
+            "e",
+            "i",
+            "o",
+            "u"
+    };
+
     public static String[] BOCALES = {
             "",
             "A",
